@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flexbox</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+      }
+      .cate {
+        width: 80%;
+        margin: 50px auto;
+        padding: 30px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .cate-item {
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      .cate-item img {
+        display: block;
+        width: 100%;
+      }
+      .cate-img {
+        border-radius: 50px;
+        overflow: hidden;
+      }
+      .cate-item p {
+        font-size: 12px;
+      }
+      /* list */
+      .list {
+        width: 70%;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .list-box {
+        width: 100%;
+        height: 360px;
+        padding: 10px;
+        background-color: #ddf;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #ddd;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .list-box::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.5) 0%,
+          rgba(0, 0, 0, 0) 50%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+        left: 0;
+        top: 0;
+        z-index: 0;
+        border-radius: 10px;
+      }
+      .list-box:nth-child(1) {
+        background: url("images/list01.jpg") center no-repeat;
+        background-size: cover;
+      }
+      .list-box:nth-child(2) {
+        background: url("images/list02.jpg") center no-repeat;
+        background-size: cover;
+      }
+      .list-box:nth-child(3) {
+        background: url("images/list03.jpg") center no-repeat;
+        background-size: cover;
+      }
+      .list-box:nth-child(4) {
+        background: url("images/list04.jpg") center no-repeat;
+        background-size: cover;
+      }
+      .list-box .view {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        position: relative;
+        z-index: 10;
+      }
+      .list-box .view .view-info {
+        height: 28px;
+        padding: 2px 8px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border-radius: 4px;
+        background-color: #333;
+        cursor: pointer;
+      }
+      .list-box .view .view-info.light {
+        background-color: #f0f0f0;
+      }
+      .list-box .view .view-info.light svg {
+        color: #333;
+      }
+      .list-box .view .view-info.light span {
+        color: #333;
+      }
+      .list-box .view .view-info svg {
+        width: 15px;
+        color: #e7e8e9;
+      }
+      .list-box .view .view-info span {
+        font-size: 13px;
+        font-weight: bold;
+        color: #e7e8e9;
+      }
+      .list-box .title {
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 10;
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+      }
+      .info-box {
+        position: relative;
+        z-index: 10;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .info-box p {
+        font-size: 14px;
+      }
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        margin-top: 6px;
+      }
+      .price strong {
+        color: #e5000f;
+        margin-right: 4px;
+      }
+      .price p {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .header-right {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+      }
+      .header-right .header-item {
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border-radius: 6px;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+      .header-right .header-item svg {
+        color: #666;
+      }
+      .header-right .header-item span {
+        font-size: 12px;
+        color: #666;
+      }
+      .header-right .header-item:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- category -->
+    <div class="cate">
+      <div class="cate-item">
+        <div class="cate-img">
+          <img src="images/image01.png" alt="cate-item" />
+        </div>
+        <p>이번주 핫딜</p>
+      </div>
+      <div class="cate-item">
+        <div class="cate-img">
+          <img src="images/image02.png" alt="cate-item" />
+        </div>
+        <p>프리미엄호텔</p>
+      </div>
+      <div class="cate-item">
+        <div class="cate-img">
+          <img src="images/image03.png" alt="cate-item" />
+        </div>
+        <p>리조트</p>
+      </div>
+      <div class="cate-item">
+        <div class="cate-img">
+          <img src="images/image04.png" alt="cate-item" />
+        </div>
+        <p>플래시 특가</p>
+      </div>
+      <div class="cate-item">
+        <div class="cate-img">
+          <img src="images/image05.png" alt="cate-item" />
+        </div>
+        <p>얼리버드 특가</p>
+      </div>
+      <div class="cate-item">
+        <div class="cate-img">
+          <img src="images/image06.png" alt="cate-item" />
+        </div>
+        <p>애견동반</p>
+      </div>
+      <div class="cate-item">
+        <div class="cate-img">
+          <img src="images/image07.png" alt="cate-item" />
+        </div>
+        <p>키즈 호텔</p>
+      </div>
+      <div class="cate-item">
+        <div class="cate-img">
+          <img src="images/image08.png" alt="cate-item" />
+        </div>
+        <p>호캉스패키지</p>
+      </div>
+    </div>
+    <!-- list -->
+    <div class="list">
+      <div class="list-box">
+        <div class="view">
+          <div class="view-info">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="size-14"
+            >
+              <path
+                fill="currentColor"
+                d="M18.42 9.87c1.589.976 1.589 3.285 0 4.26L8.196 20.408c-1.665 1.023-3.808-.176-3.808-2.13V5.724c0-1.955 2.143-3.154 3.808-2.13z"
+              ></path>
+            </svg>
+            <span>9.6천</span>
+          </div>
+        </div>
+        <div>
+          <p class="title">
+            [호텔 인터불고 엑스코] 감성과 휴시그이 가치를 실현
+          </p>
+          <div class="info-box">
+            <p>[숏폼특가] 디럭스 더블 (객실 + 조식 포함)</p>
+            <div class="price">
+              <strong>64%</strong>
+              <p>203,670</p>
+              <span>원 ~</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-box">
+        <div class="view">
+          <div class="view-info light">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="size-14"
+            >
+              <path
+                fill="currentColor"
+                d="M19.157 12a7.25 7.25 0 1 0-14.5 0 7.25 7.25 0 0 0 14.5 0m-8-.368V7.556a.75.75 0 0 1 1.5 0v4.076q.001.057.041.098l2.407 2.407a.75.75 0 0 1-1.06 1.06l-2.407-2.406a1.64 1.64 0 0 1-.48-1.16m8.28-6.662a2.25 2.25 0 0 0-2.78-.318 8.8 8.8 0 0 1 2.986 3.258 2.25 2.25 0 0 0-.205-2.94M7.245 4.597A2.249 2.249 0 0 0 4.25 7.764a8.8 8.8 0 0 1 2.994-3.167M20.657 12a8.72 8.72 0 0 1-2.526 6.15l1.314 1.313a.75.75 0 1 1-1.061 1.06l-1.4-1.399a8.7 8.7 0 0 1-5.077 1.626 8.7 8.7 0 0 1-5.078-1.626l-1.398 1.4a.75.75 0 0 1-1.06-1.061l1.313-1.314A8.72 8.72 0 0 1 3.157 12c0-.947.152-1.858.43-2.712a1 1 0 0 1-.089-.076 3.75 3.75 0 0 1 5.236-5.366 8.7 8.7 0 0 1 3.173-.596c1.168 0 2.283.23 3.301.645a3.75 3.75 0 0 1 5.29 5.317.75.75 0 0 1-.243.161c.26.83.402 1.712.402 2.627"
+              ></path>
+            </svg>
+            <span>방송예정</span>
+          </div>
+        </div>
+        <div>
+          <p class="title">
+            [하이원리조트 & X6 + 시즌패스]동계 얼리버드 단독 특가
+          </p>
+          <div class="info-box">
+            <p>오늘</p>
+            <div class="price">
+              <p>19:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-box">
+        <div class="view">
+          <div class="view-info light">
+            <span>다시보기</span>
+          </div>
+          <div class="view-info">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="size-14"
+            >
+              <path
+                fill="currentColor"
+                d="M18.42 9.87c1.589.976 1.589 3.285 0 4.26L8.196 20.408c-1.665 1.023-3.808-.176-3.808-2.13V5.724c0-1.955 2.143-3.154 3.808-2.13z"
+              ></path>
+            </svg>
+            <span>6.2만</span>
+          </div>
+        </div>
+        <div>
+          <p class="title">[신라모노그램 강릉] 휴식을 더욱 특별하게!</p>
+          <div class="info-box">
+            <p>[라이브특가 1부 수영장 2인 특가]</p>
+            <div class="price">
+              <strong>83%</strong>
+              <p>142,740</p>
+              <span>원 ~</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-box">
+        <div class="view">
+          <div class="view-info light">
+            <span>다시보기</span>
+          </div>
+          <div class="view-info">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="size-14"
+            >
+              <path
+                fill="currentColor"
+                d="M18.42 9.87c1.589.976 1.589 3.285 0 4.26L8.196 20.408c-1.665 1.023-3.808-.176-3.808-2.13V5.724c0-1.955 2.143-3.154 3.808-2.13z"
+              ></path>
+            </svg>
+            <span>6.2만</span>
+          </div>
+        </div>
+        <div>
+          <p class="title">
+            [롯데호텔 제주] 중문 바다 앞 프리미엄 리조트 호캉스
+          </p>
+          <div class="info-box">
+            <p>[라이브특가] 마운틴 더블 → 샤롯데</p>
+            <div class="price">
+              <strong>62%</strong>
+              <p>242,100</p>
+              <span>원 ~</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-item">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          fill="none"
+          viewBox="0 0 18 18"
+        >
+          <path
+            fill="currentColor"
+            d="M11.291 5.3a2.291 2.291 0 1 0-4.582 0 2.291 2.291 0 0 0 4.582 0m1.3 0a3.59 3.59 0 1 1-7.182 0 3.59 3.59 0 0 1 7.182 0M14.6 13.344a2.35 2.35 0 0 0-2.35-2.35h-6.5a2.35 2.35 0 0 0-2.35 2.35v1.147c0 .193.157.35.35.35h10.5a.35.35 0 0 0 .35-.35zm1.3 1.147c0 .911-.739 1.65-1.65 1.65H3.75a1.65 1.65 0 0 1-1.65-1.65v-1.147a3.65 3.65 0 0 1 3.65-3.65h6.5a3.65 3.65 0 0 1 3.65 3.65z"
+          ></path>
+        </svg>
+        <span>마이</span>
+      </div>
+      <div class="header-item">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          fill="none"
+          viewBox="0 0 18 18"
+        >
+          <path
+            fill="currentColor"
+            d="M15.19 6.817c0-1.84-1.433-3.291-3.15-3.292-1.02 0-1.933.507-2.513 1.308l-.526.727-.526-.727c-.58-.8-1.494-1.307-2.513-1.308-1.717 0-3.15 1.452-3.15 3.292 0 .795.307 1.514.782 2.139l.214.263.006.008.006.007c.327.4 1.575 1.706 2.847 3.007.913.935 1.805 1.834 2.336 2.357.53-.523 1.423-1.42 2.335-2.356 1.27-1.301 2.516-2.607 2.843-3.008l.013-.015c.596-.684.995-1.493.995-2.402m1.3 0c0 1.312-.581 2.412-1.315 3.255h-.001c-.39.471-1.672 1.813-2.905 3.077-1.251 1.282-2.515 2.551-2.83 2.834a.65.65 0 0 1-.87 0c-.315-.283-1.58-1.55-2.833-2.833-1.249-1.278-2.55-2.636-2.923-3.093-.727-.841-1.301-1.937-1.301-3.24 0-2.513 1.97-4.592 4.45-4.592A4.36 4.36 0 0 1 9 3.464a4.36 4.36 0 0 1 3.04-1.24c2.48 0 4.45 2.08 4.45 4.593"
+          ></path>
+        </svg>
+        <span>찜</span>
+      </div>
+      <div class="header-item">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          fill="none"
+          viewBox="0 0 18 18"
+        >
+          <path
+            fill="currentColor"
+            d="M7 14.652a.468.468 0 1 0-.937 0 .468.468 0 0 0 .936 0m1.3 0a1.769 1.769 0 1 1-3.538 0 1.769 1.769 0 0 1 3.537 0M12.964 14.652a.468.468 0 1 0-.937.001.468.468 0 0 0 .937-.002m1.3 0a1.769 1.769 0 1 1-3.537 0 1.769 1.769 0 0 1 3.537 0M14.396 3.95c.893 0 1.555.827 1.361 1.699L14.6 10.86a1.395 1.395 0 0 1-1.362 1.091h-7.38A1.396 1.396 0 0 1 4.5 10.875L3.065 4.75a.65.65 0 0 1 .633-.799zm-8.63 6.63c.01.042.048.073.092.073h7.379c.044 0 .084-.031.094-.075l1.158-5.212a.095.095 0 0 0-.093-.115H4.518z"
+          ></path>
+          <path
+            fill="currentColor"
+            d="M2.575 1.709a1.395 1.395 0 0 1 1.366 1.078l1.173 5.017a.65.65 0 0 1-1.266.296L2.676 3.082a.096.096 0 0 0-.094-.073l-1.41.008a.65.65 0 0 1-.008-1.3z"
+          ></path>
+        </svg>
+        <span>장바구니</span>
+      </div>
+      <div class="header-item">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          fill="none"
+          viewBox="0 0 18 18"
+        >
+          <path
+            fill="currentColor"
+            d="M15.1 9A6.1 6.1 0 1 0 2.9 9a6.1 6.1 0 0 0 12.2 0m-6.75-.31V5.25a.65.65 0 0 1 1.3 0v3.44a.1.1 0 0 0 .03.07l2.03 2.03a.651.651 0 0 1-.92.92L8.76 9.68a1.4 1.4 0 0 1-.41-.99M16.4 9A7.4 7.4 0 1 1 1.6 9 7.4 7.4 0 0 1 16.4 9"
+          ></path>
+        </svg>
+        <span>최근 본 상품</span>
+      </div>
+    </div>
+  </body>
+</html>

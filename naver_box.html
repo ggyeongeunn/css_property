@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>naver login box</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+      }
+      button {
+        border: none;
+        background-color: transparent;
+      }
+      .login {
+        width: 420px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow:
+          0 0 0 1px #0000001a,
+          0 1px 2px rgba(0, 0, 0, 0.04);
+        text-align: center;
+      }
+      .login p {
+        font-size: 15px;
+        color: #2e2e2e;
+      }
+      .login button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 13px;
+        padding: 16px 0;
+        border: 1px solid #0000001a;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(3, 199, 90, 0.12);
+        background-color: #03a94d;
+        position: relative;
+        cursor: pointer;
+      }
+      .login button:hover::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: inherit;
+        background-color: #0000000f;
+      }
+      .login button:hover {
+        box-shadow: 0 2px 4px rgba(3, 199, 90, 0.24);
+      }
+      .login button p {
+        font-size: 16px;
+        font-weight: 900;
+        color: #fff;
+      }
+      .login button span {
+        color: #fff;
+        font-size: 15px;
+      }
+      .login ul {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .login ul li {
+        position: relative;
+      }
+      .login ul li:not(:first-child)::before {
+        content: "";
+        width: 1px;
+        height: 12px;
+        margin: 4px 12px 0;
+        display: inline-block;
+        background-color: #00000014;
+      }
+      .login ul li a {
+        font-size: 14px;
+        color: #737373;
+      }
+      /* 제품 이미지 */
+      .item-box {
+        width: 300px;
+        padding: 12px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        box-shadow: 0 0 5px #cdd1d5;
+        border-radius: 8px;
+      }
+      .item-box img {
+        border-radius: 4px;
+        box-shadow: 0 0 2px #efefef;
+      }
+      .item-box button {
+        padding: 6px 0;
+        border: 1px solid #cdd1d5;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .item-box button:hover {
+        background-color: #f7f8f9;
+      }
+      .item-box button span {
+        font-size: 15px;
+        color: #666;
+        font-weight: 500;
+      }
+      .item-box p {
+        font-weight: 500;
+        line-height: 1.5;
+        color: #454545;
+      }
+      .item-box .price p {
+        color: #ff5e00;
+        font-weight: 600;
+      }
+      .item-box .price span {
+        color: #454545;
+        padding-left: 10px;
+      }
+      s {
+        text-decoration: line-through;
+        color: #c0c0c0;
+        font-size: 13px;
+      }
+      .comment {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+      }
+      .comment p {
+        color: #c0c0c0;
+        margin-bottom: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="login">
+      <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+      <button>
+        <p>NAVER</p>
+        <span>로그인</span>
+      </button>
+      <ul>
+        <li><a href="#">아이디 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </section>
+    <section>
+      <div class="item-box">
+        <img src="item_img.jpg" alt="item_img" />
+        <button>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>담기</span>
+        </button>
+        <p>[말콤] 퍼퓸 모이스트필 바디워시 1000mL 2종 (택1)</p>
+        <div class="price">
+          <s>32,000원</s>
+          <p>59% <span>12,900원</span></p>
+        </div>
+        <div class="comment">
+          <i class="fa-regular fa-comment-dots" style="color: #c0c0c0"></i>
+          <p>9,999+</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
